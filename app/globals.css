@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --desert-sand: #D4A574;
+  --warm-tan: #C19A6B;
+  --deep-tan: #A67C52;
+  --sunset-orange: #E8B98B;
+  --cream: #F5E6D3;
+  --earth-brown: #8B6F47;
+  --dark-brown: #6B5238;
+  --text-dark: #3D2F1F;
+  --text-light: #5C4A35;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-desert-sand: var(--desert-sand);
+  --color-warm-tan: var(--warm-tan);
+  --color-deep-tan: var(--deep-tan);
+  --color-sunset-orange: var(--sunset-orange);
+  --color-cream: var(--cream);
+  --color-earth-brown: var(--earth-brown);
+  --color-dark-brown: var(--dark-brown);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: linear-gradient(135deg, var(--cream) 0%, #F0DCC0 100%);
+  color: var(--text-dark);
+  font-family: Georgia, 'Times New Roman', serif;
+  min-height: 100vh;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
